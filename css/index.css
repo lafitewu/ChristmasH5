@@ -1,0 +1,12 @@
+.app {
+    position: relative;
+    width: 100%;
+    padding-bottom: 5vw;
+    background: #F5C050;
+}
+    .top_banner {
+        width: 100%;
+    }
+        .top_banner img {
+            width: 100%;
+        }
