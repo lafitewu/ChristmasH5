@@ -2,11 +2,214 @@
     position: relative;
     width: 100%;
     padding-bottom: 5vw;
-    background: #F5C050;
+    background: #F7CF4E;
 }
+    .go_rules {
+        position: absolute;
+        right: 0;
+        top: 4.5vw;
+        display: inline-block;
+        width: 22vw;
+        height: 8vw;
+        background: #FE380B;
+        color: white;
+        text-align: center;
+        line-height: 8vw;
+        font-size: 3.6vw;
+        border-radius: 90px 0 0 90px;
+    }
     .top_banner {
         width: 100%;
     }
         .top_banner img {
             width: 100%;
+        }
+
+    .main_show {
+        position: relative;
+        width: 90%;
+        margin: auto;
+        background: #FEFEFE;
+        border-radius: 15px;
+        padding-bottom: 8vw;
+    }
+        .total_price {
+            position: relative;
+            width: 100%;
+        }
+            .total_price_title {
+                position: absolute;
+                top: 8vw;
+                color: white;
+                font-size: 5vw;
+                width: 100%;
+                text-align: center;
+                line-height: 8vw;
+            }
+            .total_price_line {
+                position: absolute;
+                top: 26vw;
+                height: 1px;
+                width: 80%;
+                margin-left: 10%;
+                background: #FDE024;
+            }
+            .total_price_info {
+                position: absolute;
+                top: 29vw;
+                width: 100%;
+                text-align: center;
+                color: #F3E41D;
+                font-weight: bold;
+                font-size: 3.8vw;
+            }
+            .total_price_bottom {
+                position: absolute;
+                top: 50vw;
+                width: 100%;
+                text-align: center;
+                font-size: 4vw;
+                color: white;
+            }
+            .total_price_line_left {
+                position: absolute;
+                top: 52.5vw;
+                width: 5vw;
+                height: 1px;
+                left: 10vw;
+                background: white;
+            }
+            .total_price_line_right {
+                position: absolute;
+                top: 52.5vw;
+                width: 5vw;
+                height: 1px;
+                right: 10vw;
+                background: white;
+            }
+            .total_price img {
+                width: 90%;
+                margin-left: 5%;
+                margin-top: 5vw;
+            }
+        .rightNowBtn {
+            width: 100%;
+        }
+            .rightNowBtn img {
+                width: 90%;
+                margin-left: 5%;
+            }
+        .inviteDatas {
+            width: 90%;
+            height: 20vw;
+            border-top: 1px dashed #F3CE69;
+            border-bottom: 1px dashed #F3CE69;
+            margin: 5vw auto;
+        }
+            .dataCell {
+                float: left;
+                width: calc( 100% / 3);
+                height: 100%;
+                text-align: center;
+            }
+                .dataCell div {
+                    font-size: 5vw;
+                    margin: 3vw 0 1vw 0;
+                }
+                .dataCell span {
+                    font-size: 3.2vw;
+                    color: #676767;
+                    margin-top: -3vw;
+                }
+        .inviteTitle {
+            width: 100%;
+        }
+            .inviteTitle img {
+                width: 90%;
+                margin: 3vw 5% 3vw 5%;
+            }
+        .packetList {
+            position: relative;
+            width: 90%;
+            margin-left: 5%;
+            height: 112vw;
+        }
+        .redPacket {
+            position: relative;
+            float: left;
+            width: calc( 100% / 3);
+            height: 58vw;
+            text-align: center;
+        }
+            .red_title {
+                font-size: 4.2vw;
+                color: #565656;
+                margin: 2vw auto;
+            }
+            .redBg {
+                position: relative;
+                width: 90%;
+            }
+            .redBtn {
+                margin-top: 3vw;
+                width: 90%;
+            }
+
+            .redFont1 {
+                position: absolute;
+                top: 23vw;
+                text-align: center;
+                width: 100%;
+                font-size: 4.5vw;
+                color: #FFE613;
+            }
+            .redMoney {
+                position: absolute;
+                top: 30vw;
+                text-align: center;
+                width: 100%;
+                font-size: 5.5vw;
+                color: #FFE613;
+            }
+
+        .inviteSkill {
+            width: 90%;
+            margin: auto;
+        }
+            .inviteSkill img {
+                width: 90%;
+                margin-left: 5%;
+                margin-top: 8vw; 
+            }
+        .inviteSkillCon {
+            position: relative;
+            width: 90%;
+            margin: 5vw auto;
+            height: 100vw;
+            background: white;
+            border-radius: 15px;
+        }
+            .inviteSkillCon ul {
+                list-style: none;
+                padding: 0;
+                width: 90%;
+                margin: auto;
+                padding-top: 4vw;
+            }
+            .inviteSkillCon ul li {
+                margin-top: 4vw;
+                color: #606060;
+                font-size: 4.2vw;
+            }
+
+        .invite_skill {
+            width: 90%;
+            margin-left: 5%;
+            margin-top: 4vw;
+        }
+        .info {
+            width: 100%;
+            color: white;
+            text-align: center;
+            font-size: 3.2vw;
         }

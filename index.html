@@ -7,12 +7,106 @@
     <title>圣诞活动</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/index.css">
+    <script src="js/jquery-3.1.1.min.js"></script>
 </head>
 <body>
     <div class="app">
+        <a class="go_rules" href="rules.html">活动规则</a>
         <div class="top_banner">
             <img src="images/christmas_act_bg_img.png" alt="top_banner"/>
         </div>
+        <div class="main_show">
+            <div class="total_price">
+                <div class="total_price_title">12月25日 19:00-22:00瓜分<br/>倒计时：<span>7</span><font>天</font></div>
+                <img src="images/christmas_num_bg_img.png" alt="total_price"/>
+            </div>
+            <div class="total_price_line"></div>
+            <div class="total_price_info">累计瓜分奖金</div>
+            <div class="total_price_bottom">邀请徒弟越多，瓜分金额越大</div>
+            <div class="total_price_line_left"></div>
+            <div class="total_price_line_right"></div>
+            <div class="rightNowBtn">
+                <img src="images/christmas_share_btn.png" alt="rightNowBtn"/>
+            </div>
+
+            <div class="inviteDatas">
+                <div class="dataCell">
+                    <div class="inviteStudent">0</div>
+                    <span>邀请徒弟（个）</span>
+                </div>
+                <div class="dataCell">
+                    <div class="intoAccount">0</div>
+                    <span>已到账金额（元）</span>
+                </div>
+                <div class="dataCell">
+                    <div class="offAccount">0</div>
+                    <span>待领取金额（元）</span>
+                </div>
+            </div>
+
+            <div class="inviteTitle">
+                <img src="images/christmas_take_rule_title.png" alt="inviteTitle">
+            </div>
+            <div class="packetList">
+                <div class="redPacket">
+                    <div class="red_title">2个徒弟</div>
+                    <img class="redBg" src="images/christmas_redbag_img.png" alt="redBg"/>
+                    <img class="redBtn" src="images/christmas_before_btn.png" alt="redBtn"/>
+                    <div class="redFont1">最高</div>
+                    <div class="redMoney">10元</div>
+                </div>
+                <div class="redPacket">
+                    <div class="red_title">5个徒弟</div>
+                    <img class="redBg" src="images/christmas_redbag_img.png" alt="redBg"/>
+                    <img class="redBtn" src="images/christmas_before_btn.png" alt="redBtn"/>
+                    <div class="redFont1">最高</div>
+                    <div class="redMoney">18元</div>
+                </div>
+                <div class="redPacket">
+                    <div class="red_title">10个徒弟</div>
+                    <img class="redBg" src="images/christmas_redbag_img.png" alt="redBg"/>
+                    <img class="redBtn" src="images/christmas_before_btn.png" alt="redBtn"/>
+                    <div class="redFont1">最高</div>
+                    <div class="redMoney">32元</div>
+                </div>
+                <div class="redPacket">
+                    <div class="red_title">100个徒弟</div>
+                    <img class="redBg" src="images/christmas_redbag_img.png" alt="redBg"/>
+                    <img class="redBtn" src="images/christmas_before_btn.png" alt="redBtn"/>
+                    <div class="redFont1">最高</div>
+                    <div class="redMoney">520元</div>
+                </div>
+                <div class="redPacket">
+                    <div class="red_title">500个徒弟</div>
+                    <img class="redBg" src="images/christmas_redbag_img.png" alt="redBg"/>
+                    <img class="redBtn" src="images/christmas_before_btn.png" alt="redBtn"/>
+                    <div class="redFont1">最高</div>
+                    <div class="redMoney">2000元</div>
+                </div>
+                <div class="redPacket">
+                    <div class="red_title">2000个徒弟</div>
+                    <img class="redBg" src="images/christmas_redbag_img.png" alt="redBg"/>
+                    <img class="redBtn" src="images/christmas_before_btn.png" alt="redBtn"/>
+                    <div class="redFont1">最高</div>
+                    <div class="redMoney">8888元</div>
+                </div>
+            </div>
+        </div>
+        <div class="inviteSkill">
+            <img src="images/christmas_invite_rule_title.png" alt="inviteSkill"/>
+        </div>
+        <div class="inviteSkillCon">
+            <ul>
+                <li>1.邀请您的家人、朋友、同学、同事;</li>
+                <li>2.邀请时告诉朋友:注册可领最高18元随机红包，微信可立即提现哦;</li>
+                <li>3.面对面使用二维码邀请，帮助好友下载安装;</li>
+                <li>4.分享3个以上的微信群/QQ群;</li>
+                <li>5.收徒步骤:</li>
+            </ul>
+            <img class="invite_skill" src="images/christmas_invite_step_img.png" alt="invite_skill">
+        </div>
+        <div class="info">为了保证活动的公平公正性，作弊用户将取消所有奖励<br/>活动最终解释权归悦头条所有</div>
     </div>
 </body>
 </html>
+<script src="js/index.js"></script>
