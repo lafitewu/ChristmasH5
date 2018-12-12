@@ -4,6 +4,253 @@
     padding-bottom: 5vw;
     background: #F7CF4E;
 }
+    .cover {
+        z-index: 99;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        background: rgba(16,16,16,.7);
+        /* display: none; */
+    }
+    .noTimeToast {
+        z-index: 101;
+        position: fixed;
+        left: 12.5%;
+        top: 36vw;
+        width: 75%;
+        height: 50%;
+        /* animation: zoomIn .5s ease-in-out; */
+        display: none;
+    }
+        .noTimeBg {
+            width: 100%;
+        }
+        .close {
+            position: inherit;
+            right: 7.5%;
+            top: 24vw;
+            width: 10%;
+            /* display: none; */
+        }
+        .noTimeFont1 {
+            position: inherit;
+            top: 78vw;
+            width: 75%;
+            text-align: center;
+            font-size: 6.5vw;
+            line-height: 10vw;
+            /* font-weight: bold; */
+            color: #ED1000;
+        }
+        .noTimeFont2 {
+            position: inherit;
+            top: 102vw;
+            width: 75%;
+            color: #535353;
+            font-size: 4vw;
+            line-height: 7vw;
+            text-align: center;
+        }
+        .noTimeBtn {
+            position: inherit;
+            width: 55%;
+            left: 22.5%;
+            top: 120vw;
+        }
+            .noTimeBtn img {
+                width: 100%;
+            }
+            .noTimeBtnFont {
+                position: inherit;
+                width: 55%;
+                top: 123.5vw;
+                font-size: 5vw;
+                text-align: center;
+                color: #401500;
+            }
+
+    .reward {
+        z-index: 101;
+        position: fixed;
+        left: 10%;
+        top: 36vw;
+        width: 80%;
+        height: 50%;
+        /* animation: zoomIn .5s ease-in-out; */
+        display: none;
+    }
+        .rewardBg {
+            width: 100%;
+        }
+        .rewardClose {
+            position: inherit;
+            right: 11%;
+            top: 25vw;
+            width: 10%;
+        }
+        .rewardFont1 {
+            position: inherit;
+            width: 80%;
+            top: 46vw;
+            color: #461D00;
+            text-align: center;
+            line-height: 7vw;
+        }
+            .rewardFont1 span {
+                color: #ED1800;
+                font-size: 5.2vw;
+            }
+        .rewardFont2 {
+            position: inherit;
+            top: 73vw;
+            width: 80%;
+            color: white;
+            font-size: 5vw;
+            text-align: center;
+        }
+            .rewardFont2 span {
+                color: #FCFF00;
+            }
+        .rewardFont3 {
+            position: inherit;
+            top: 90vw;
+            width: 50%;
+            height: 8vw;
+            background: #BE0D18;
+            color: white;
+            margin-left: 15%;
+            text-align: center;
+            line-height: 8vw;
+            border-radius: 90px;
+            font-size: 4vw;
+        }
+        .rewordBtn {
+            position: inherit;
+            width: 41%;
+            top: 103vw;
+            font-size: 5vw;
+            text-align: center;
+            color: #401500;
+            margin-left: 19.5%;
+        }
+            .rewordBtn img {
+                width: 100%;
+            }
+            .rewardBtnFont {
+                position: inherit;
+                width: 41%;
+                top: 105.5vw;
+                font-size: 4.5vw;
+                text-align: center;
+                color: #401500;
+            }
+
+    .Divide {
+        z-index: 101;
+        position: fixed;
+        left: 5%;
+        top: 20vw;
+        width: 90%;
+        height: 50%; 
+    }
+        .DivideBg {
+            width: 100%;
+        }
+        .DivideClose {
+            position: inherit;
+            right: 4%;
+            top: 11vw;
+            width: 9%;
+        }
+        .DivideFont1 {
+            position: inherit;
+            width: 90%;
+            top: 45vw;
+            color:black;
+            text-align: center;
+            font-size: 4.5vw;
+            font-weight: bold;
+        }
+        .DivideFont2 {
+            position: inherit;
+            width: 90%;
+            top: 54vw;
+            color:#F01505;
+            text-align: center;
+            font-size: 13vw;
+            font-weight: bold;
+        }
+        .DivideStudent {
+            position: inherit;
+            width: 70%;
+            margin-left: 10%;
+            top: 80vw;
+            height: 56vw;
+            border-top: 1px solid #F2F2F2;
+            border-bottom: 1px solid #F2F2F2;
+        }
+            .DivideStudentTitle {
+                position: inherit;
+                top: 87vw;
+                left: 20%;
+                width: 62%;
+            }
+            .DivideStudentCon {
+                position: inherit;
+                top: 100vw;
+                height: 35vw;
+                width: 70%;
+            }
+                .DivideList {
+                    position: relative;
+                    float: left;
+                    width: 28%;
+                    height: 100%;
+                }
+                .DivideListMiddle {
+                    margin: auto 8%;
+                }
+                    .DivideListPic {
+                        width: 70%;
+                        margin-left: 15%;
+                        border-radius: 90px;
+                    }
+                    .nickName {
+                        margin-top: 2vw;
+                        font-size: 3.2vw;
+                        overflow: hidden;
+                        text-overflow:ellipsis;
+                        white-space: nowrap;
+                    }
+                    .DivideMoney {
+                        margin-top: 2vw;
+                        font-size: 4.5vw;
+                        color: #EF1700;
+                        text-align: center;
+                        font-weight: bold;
+                    }
+            .DivideBtn {
+                position: inherit;
+                width: 45%;
+                top: 145vw;
+                font-size: 5vw;
+                text-align: center;
+                color: #401500;
+                margin-left: 23.5%;
+            }
+                .DivideBtn img {
+                    width: 100%;
+                }
+            .DivideBtnFont {
+                position: inherit;
+                width: 45%;
+                top: 147.5vw;
+                font-size: 5vw;
+                text-align: center;
+                color: #401500;
+            }       
+
     .go_rules {
         position: absolute;
         right: 0;
@@ -37,6 +284,62 @@
             position: relative;
             width: 100%;
         }
+            .bonus {
+                position: absolute;
+                width: 80%;
+                height: 14vw;
+                top: 35vw;
+                margin-left: 10%;
+            }
+                .bonus_left,.bonus_right {
+                    float: left;
+                }
+                .bonus_left {
+                    width: 85%;
+                    height: 100%;
+                    text-align: center;
+                    text-indent: 5vw;
+                }
+                .bonus_left span{ 
+                    display: inline-block; 
+                    font-size: 12vw; 
+                    vertical-align: text-bottom;
+                    margin-top: 1.6vw;
+                }
+                    .bonus_left span.numbs{
+                        width: calc(100%/9);
+                    }
+                    .bonus_left span.numbs:after{
+                        transition-duration: 300ms; 
+                        display: block;
+                        content: '';
+                        background-image: url('../images/YellowNumbs.png');
+                        /* background-position:center 150.24%;  */
+                        background-repeat:repeat-y; 
+                        background-size: auto 1021%;
+                        width: 100%;
+                        height: .9em; 
+                        background-position: center top;
+                    }
+                    .bonus_left span.numbs-0:after{background-position: center -333;}
+                    .bonus_left span.numbs-1:after{background-position: center -322%;}
+                    .bonus_left span.numbs-2:after{background-position: center -311%;}
+                    .bonus_left span.numbs-3:after{background-position: center -299%;}
+                    .bonus_left span.numbs-4:after{background-position: center -288%;}
+                    .bonus_left span.numbs-5:after{background-position: center -277%;}
+                    .bonus_left span.numbs-6:after{background-position: center -266%;}
+                    .bonus_left span.numbs-7:after{background-position: center -255%;}
+                    .bonus_left span.numbs-8:after{background-position: center -244%;}
+                    .bonus_left span.numbs-9:after{background-position: center -232.6%;}
+                .bonus_right {
+                    width: 15%;
+                    height: 100%;
+                    line-height: 20vw;
+                    color: #F8DE25;
+                    font-size: 4.6vw;
+                    text-align: center;
+                    font-weight: bold;
+                }
             .total_price_title {
                 position: absolute;
                 top: 8vw;
@@ -213,3 +516,16 @@
             text-align: center;
             font-size: 3.2vw;
         }
+
+
+        @-webkit-keyframes zoomIn {
+            from {
+              opacity: 0;
+              -webkit-transform: scale3d(.3, .3, .3);
+              transform: scale3d(.3, .3, .3);
+            }
+          
+            50% {
+              opacity: 1;
+            }
+          }
