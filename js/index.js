@@ -6,8 +6,20 @@ $(function() {
         this.datas;
     }
     game.prototype = {
+        // 获取参数fn
+		getQueryString:function(name) {
+			var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+			var r = window.location.search.substr(1).match(reg);
+			if (r != null) {
+				return unescape(r[2]);
+			}
+			return null;
+		},
         init() {
             var that = this;
+            that.uid = that.getQueryString("phoneNum");
+            that.token = that.getQueryString("token");
+
             $.get(that.hostname+"/yfax-htt-api/api/htt/queryChrismasActivityIndex",{"phoneNum": that.uid,"access_token": that.token}, function(res){
                 console.log(res);
                 if(res.code == 200) {
@@ -94,14 +106,26 @@ $(function() {
             }
         },
         noTimeToastFn() {
-            if(this.datas.curStep == 0) {
-                $(".noTimeFont1").html("邀请好友2名以上<br/>即可获得瓜分资格"); 
-            }else {
-                $(".noTimeFont1").html("恭喜您<br/>已具备瓜分资格");
-            }
+            var that = this;
+            
             $(".rightNowBtn").click(function() {
-                $(".cover").show();
-                $(".noTimeToast").fadeIn(500);
+                var lastTime = Date.parse(new Date(that.datas.redStartDate));
+                var nowTime = Date.parse(new Date(that.datas.curTime));
+                if(lastTime-nowTime < 0) {
+                    if(that.datas.curStep > 0) {
+                        $(".cover").show();
+                        $(".Divide").fadeIn(500);
+                    }
+                }else {
+                    if(that.datas.curStep == 0) {
+                        $(".noTimeFont1").html("邀请好友2名以上<br/>即可获得瓜分资格"); 
+                    }else {
+                        $(".noTimeFont1").html("恭喜您<br/>已具备瓜分资格");
+                    }
+                    $(".cover").show();
+                    $(".noTimeToast").fadeIn(500);
+                }
+                
             });
             $(".close").click(function() {
                 $(".cover").hide();
@@ -127,6 +151,14 @@ $(function() {
                 {"access_token": that.token,"phoneNum": that.uid}, 
                 function(res){
                     console.log(res);
+                    console.log(res.data.redAmountRankingList);
+                    for(var i = 0; i < res.data.redAmountRankingList.length; i++) {
+                        $(".DivideList").eq(i).find(".DivideListPic").attr("src",res.data.redAmountRankingList[i].headUrl);
+                        $(".DivideList").eq(i).find(".nickName").text(res.data.redAmountRankingList[i].nickName);
+                        $(".DivideList").eq(i).find(".DivideMoney span").text(res.data.redAmountRankingList[i].redAmount);
+                    }
+                    
+                    $(".DivideFont2").text(res.data.redAmount);
                 }
             )
         },

@@ -11,7 +11,7 @@
         height: 100%;
         top: 0;
         background: rgba(16,16,16,.7);
-        /* display: none; */
+        display: none;
     }
     .noTimeToast {
         z-index: 101;
@@ -153,7 +153,14 @@
         top: 20vw;
         width: 90%;
         height: 50%; 
+        display: none;
     }
+        .divdeListIocn {
+            position: absolute;
+            top: 0vw;
+            right: 0vw;
+            width: 35%;
+        }
         .DivideBg {
             width: 100%;
         }
