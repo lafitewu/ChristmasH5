@@ -139,7 +139,7 @@ $(function() {
                     if(that.datas.curStep == 0) {
                         $(".noTimeFont1").html("邀请好友2名以上<br/>即可获得瓜分资格"); 
                     }else {
-                        $(".noTimeFont1").html("恭喜您<br/>已具备瓜分资格");
+                        $(".noTimeFont1").html("恭喜您<br/>已获得瓜分资格");
                     }
                     $(".cover").show();
                     $(".noTimeToast").fadeIn(500);
