@@ -181,8 +181,18 @@ $(function() {
                 }
             )
         },
+        scollFn() {
+            $(window).scroll(function() {
+                if($(".inviteTitle").offset().top - $(window).scrollTop() < 0) {
+                    $(".footerBtn").slideDown();
+                }else {
+                    $(".footerBtn").slideUp();
+                }
+            })
+        },
         start() {
             this.init();
+            this.scollFn();
             // this.ClickFn();
         }
     }
