@@ -48,7 +48,6 @@ $(function() {
                    that.priceAllFn();
                    that.ClickFn();
                    that.noTimeToastFn();
-                   that.divideFn();
                 }
             })
         },
@@ -113,6 +112,7 @@ $(function() {
                 var nowTime = Date.parse(new Date(that.datas.curTime));
                 if(lastTime-nowTime < 0) {
                     if(that.datas.curStep > 0) {
+                        that.divideFn();
                         $(".cover").show();
                         $(".Divide").fadeIn(500);
                     }
