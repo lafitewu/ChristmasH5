@@ -28,7 +28,22 @@ $(function() {
                     $(".intoAccount").text(res.data.awardAmount || 0);
                     $(".offAccount").text(res.data.remainAmount || 0);
 
-                    $(".total_price_title span").text(res.data.redDay);
+                    // 判断显示倒计时还是天数
+                    if(res.data.redDay > 0) {
+                        $(".total_price_title span").text(res.data.redDay);
+                    }else {
+                        if(Date.parse(new Date(res.data.redStartDate))-Date.parse(new Date(res.data.curTime)) <= 0) {
+                            $(".total_price_title").html("12月25日 19:00-22:00瓜分<br>奖励瓜分中...");
+                        }else {
+                            $(".total_price_title font").hide();
+                            $(".total_price_title span").countDown({
+                                times: res.data.redStartDate,  //必填'2018/8/13 18:00:00或者 2(两分钟) 
+                                ms: false,   //毫秒是否开启
+                                Hour: true   //小时是否开启
+                            });
+                        }
+                    }
+                    
 
                     // 渲染所有按钮 && 禁止点击
                     var Len = res.data.curStep - 1;
@@ -44,6 +59,10 @@ $(function() {
                         $(".redPacket").eq(j).find(".redBtn").attr("src","images/christmas_before_btn.png");
                         $(".redPacket").eq(j).find(".redBtn").css("pointer-events","none");
                     }
+                //    if(Date.parse(new Date(res.data.redStartDate))-Date.parse(new Date(res.data.curTime)) <= 68400000) {
+                //        console.log('最后一天啦!');
+                //    }
+                    
                    that.datas = res.data;
                    that.priceAllFn();
                    that.ClickFn();
