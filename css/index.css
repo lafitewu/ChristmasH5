@@ -16,9 +16,9 @@
     .noTimeToast {
         z-index: 101;
         position: fixed;
-        left: 12.5%;
+        left: 7.5%;
         top: 36vw;
-        width: 75%;
+        width: 85%;
         height: 50%;
         /* animation: zoomIn .5s ease-in-out; */
         display: none;
@@ -30,13 +30,13 @@
             position: inherit;
             right: 7.5%;
             top: 24vw;
-            width: 10%;
+            width: 8%;
             /* display: none; */
         }
         .noTimeFont1 {
             position: inherit;
-            top: 78vw;
-            width: 75%;
+            top: 74vw;
+            width: 85%;
             text-align: center;
             font-size: 6.5vw;
             line-height: 10vw;
@@ -45,8 +45,8 @@
         }
         .noTimeFont2 {
             position: inherit;
-            top: 102vw;
-            width: 75%;
+            top: 97vw;
+            width: 85%;
             color: #535353;
             font-size: 4vw;
             line-height: 7vw;
@@ -56,7 +56,7 @@
             position: inherit;
             width: 55%;
             left: 22.5%;
-            top: 120vw;
+            top: 116vw;
         }
             .noTimeBtn img {
                 width: 100%;
@@ -64,7 +64,7 @@
             .noTimeBtnFont {
                 position: inherit;
                 width: 55%;
-                top: 123.5vw;
+                top: 120vw;
                 font-size: 5vw;
                 text-align: center;
                 color: #401500;
@@ -87,12 +87,12 @@
             position: inherit;
             right: 11%;
             top: 25vw;
-            width: 10%;
+            width: 8%;
         }
         .rewardFont1 {
             position: inherit;
-            width: 80%;
-            top: 46vw;
+            width: 83%;
+            top: 49vw;
             color: #461D00;
             text-align: center;
             line-height: 7vw;
@@ -103,7 +103,7 @@
             }
         .rewardFont2 {
             position: inherit;
-            top: 73vw;
+            top: 78vw;
             width: 80%;
             color: white;
             font-size: 5vw;
@@ -114,7 +114,7 @@
             }
         .rewardFont3 {
             position: inherit;
-            top: 90vw;
+            top: 95vw;
             width: 50%;
             height: 8vw;
             background: #BE0D18;
@@ -128,7 +128,7 @@
         .rewordBtn {
             position: inherit;
             width: 41%;
-            top: 103vw;
+            top: 111vw;
             font-size: 5vw;
             text-align: center;
             color: #401500;
@@ -140,7 +140,7 @@
             .rewardBtnFont {
                 position: inherit;
                 width: 41%;
-                top: 105.5vw;
+                top: 113.5vw;
                 font-size: 4.5vw;
                 text-align: center;
                 color: #401500;
@@ -168,7 +168,7 @@
             position: inherit;
             right: 4%;
             top: 11vw;
-            width: 9%;
+            width: 8%;
         }
         .DivideFont1 {
             position: inherit;
