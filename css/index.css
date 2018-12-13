@@ -524,6 +524,22 @@
             font-size: 3.2vw;
         }
 
+        .block {
+            width: 100%;
+            height: 20vw;
+        }
+        .footerBtn {
+            position: fixed;
+            bottom: 0vw;
+            width: 100%;
+            height: 20vw;
+            background: #F7CF4E;
+        }
+            .footerImg {
+                width: 60%;
+                margin-left: 20%;
+                margin-top: 3vw;
+            }
 
         @-webkit-keyframes zoomIn {
             from {
