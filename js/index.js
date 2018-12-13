@@ -146,19 +146,19 @@ $(function() {
                 }
                 
             });
-            $(".close").click(function() {
+            $(".close,.noTimeBtn").click(function() {
                 $(".cover").hide();
                 $(".noTimeToast").hide();
             });
 
             // rewardFN
-            $(".rewardClose").click(function() {
+            $(".rewardClose,.rewordBtn").click(function() {
                 $(".cover").hide();
                 $(".reward").hide();
             });
 
             // 瓜分弹窗
-            $(".DivideClose").click(function() {
+            $(".DivideClose,.DivideBtn").click(function() {
                 $(".cover,.Divide").hide();
             });
         },
