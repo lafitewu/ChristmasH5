@@ -139,8 +139,6 @@ $(function() {
                 if(lastTime-nowTime < 0) {
                     if(that.datas.curStep > 0) {
                         that.divideFn();
-                        $(".cover").show();
-                        $(".Divide").fadeIn(500);
                     }
                 }else {
                     if(that.datas.curStep == 0) {
@@ -180,7 +178,9 @@ $(function() {
                 {"access_token": that.token,"phoneNum": that.uid}, 
                 function(res){
                     console.log(res);
-                    console.log(res.data.redAmountRankingList);
+                    $(".cover").show();
+                    $(".Divide").fadeIn(500);
+                    
                     for(var i = 0; i < res.data.redAmountRankingList.length; i++) {
                         $(".DivideList").eq(i).find(".DivideListPic").attr("src",res.data.redAmountRankingList[i].headUrl);
                         $(".DivideList").eq(i).find(".nickName").text(res.data.redAmountRankingList[i].nickName);
