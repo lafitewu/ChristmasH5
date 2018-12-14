@@ -19,7 +19,8 @@ $(function() {
             var that = this;
             that.uid = that.getQueryString("uid");
             that.token = that.getQueryString("token");
-
+            $(".go_rules").attr("href","rules.html?uid="+that.uid+"&token="+that.token);
+            
             $.get(that.hostname+"/yfax-htt-api/api/htt/queryChrismasActivityIndex",{"phoneNum": that.uid,"access_token": that.token}, function(res){
                 console.log(res);
                 if(res.code == 200) {
