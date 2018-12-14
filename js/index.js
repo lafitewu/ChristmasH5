@@ -2,7 +2,7 @@ $(function() {
     function game() {
         this.hostname = "http://182.92.82.188:8084";
         this.uid = "999999999999";
-        this.token = "bed09ace-886e-4e8f-9aaa-c36fbc2e87ae";
+        this.token = "1e3ab683-f455-4b42-bf9b-3fd104b289be";
         this.datas;
     }
     game.prototype = {
@@ -24,7 +24,13 @@ $(function() {
             $.get(that.hostname+"/yfax-htt-api/api/htt/queryChrismasActivityIndex",{"phoneNum": that.uid,"access_token": that.token}, function(res){
                 console.log(res);
                 if(res.code == 200) {
-                
+                    
+                    // 是否可以瓜分
+                    if(res.data.isGetRed == 1) {
+                        $(".rightNowBtn img").attr("src","images/christmas_gray_share_btn.png");
+                        $(".rightNowBtn").css("pointer-events","none");
+                    }
+
                     $(".inviteStudent").text(res.data.studentNum || 0);
                     $(".intoAccount").text(res.data.awardAmount || 0);
                     $(".offAccount").text(res.data.remainAmount || 0);
@@ -161,6 +167,9 @@ $(function() {
             // 瓜分弹窗
             $(".DivideClose,.DivideBtn").click(function() {
                 $(".cover,.Divide").hide();
+                setTimeout(function() {
+                    that.init();
+                },100)
             });
         },
         // 瓜分fn
