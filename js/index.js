@@ -143,8 +143,10 @@ $(function() {
                 }else {
                     if(that.datas.curStep == 0) {
                         $(".noTimeFont1").html("邀请好友2名以上<br/>即可获得瓜分资格"); 
+                        $(".noTimeBtnFont").html("分享收徒");
                     }else {
                         $(".noTimeFont1").html("恭喜您<br/>已获得瓜分资格");
+                        $(".noTimeBtnFont").html("分享中大奖");
                     }
                     $(".cover").show();
                     $(".noTimeToast").fadeIn(500);
@@ -188,6 +190,7 @@ $(function() {
                     }
                     
                     $(".DivideFont2").text(res.data.redAmount);
+                    $(".numbs").eq(0).attr("class","numbs").addClass('numbs-0');
                 }
             )
         },
@@ -200,9 +203,21 @@ $(function() {
                 }
             })
         },
+        iphone() {
+            var u = navigator.userAgent;
+            if (u.indexOf('Android') > -1 || u.indexOf('Linux') > -1) {//安卓手机
+                $(".DivideBtn,.rewordBtn,.noTimeBtn,.footerA").attr("href","function://callapp?f=test&title=限时！点击领取今日现金红包&description=我在悦头条圣诞活动中，领取了28元，你也赶紧试试！&image=http://yttyunying.midongtech.xyz/sd-1217.png&link=http://url.cn/5UTcSl0&callback=shareDone");
+            } else if (u.indexOf('iPhone') > -1) {//苹果手机
+                $(".DivideBtn,.rewordBtn,.noTimeBtn,.footerA").attr("href","function://callapp?f=showShareView&title=限时！点击领取今日现金红包&description=我在悦头条圣诞活动中，领取了28元，你也赶紧试试！&image=http://yttyunying.midongtech.xyz/sd-1217.png&link=http://url.cn/5UTcSl0&callback=shareDone");
+            } else if (u.indexOf('Windows Phone') > -1) {//winphone手机
+            // alert("winphone手机");
+            // window.location.href = "mobile/index.html";
+            }
+        },
         start() {
             this.init();
             this.scollFn();
+            this.iphone();
             // this.ClickFn();
         }
     }
