@@ -2,7 +2,7 @@ $(function() {
     function game() {
         this.hostname = "http://182.92.82.188";
         this.uid = "999999999999";
-        this.token = "1e3ab683-f455-4b42-bf9b-3fd104b289be";
+        this.token = "053b9838-6c3c-49d6-a426-1558837f9383";
         this.datas;
     }
     game.prototype = {
@@ -17,8 +17,8 @@ $(function() {
 		},
         init() {
             var that = this;
-            that.uid = that.getQueryString("uid");
-            that.token = that.getQueryString("token");
+            // that.uid = that.getQueryString("uid");
+            // that.token = that.getQueryString("token");
             $(".go_rules").attr("href","rules.html?uid="+that.uid+"&token="+that.token);
             
             $.get(that.hostname+"/yfax-htt-api/api/htt/queryChrismasActivityIndex",{"phoneNum": that.uid,"access_token": that.token}, function(res){
@@ -41,8 +41,29 @@ $(function() {
                         $(".total_price_title span").text(res.data.redDay);
                     }else {
                         if(Date.parse(new Date(res.data.redStartDate))-Date.parse(new Date(res.data.curTime)) <= 0) {
-                            $(".total_price_title").html("12月25日 19:00-22:00瓜分<br>奖励瓜分中...");
+                            $(".total_price_title").html("12月25日 19:00-22:00瓜分<br>你已瓜分");
+                            $(".numbs").eq(0).attr("class","numbs").addClass('numbs-0');
+                            $(".rightNowBtn img").attr("src","images/christmas_gray_share_btn.png");
+                            $(".rightNowBtn").css("pointer-events","none");
+                            for(var k = 0; k <= 6; k++) {
+                                $(".redPacket").eq(k).find(".redBtn").attr("src","images/christmas_already_btn.png");
+                                $(".redPacket").eq(k).find(".redBtn").css("pointer-events","none");
+                            }
                         }else {
+                             // 渲染所有按钮 && 禁止点击
+                            var Len = res.data.curStep - 1;
+                            for(var i = 0;i <= Len; i++) {
+                                if(res.data.dataList[i].isDelete == 0) {
+                                    $(".redPacket").eq(i).find(".redBtn").attr("src","images/christmas_ready_btn.png");
+                                }else {
+                                    $(".redPacket").eq(i).find(".redBtn").attr("src","images/christmas_already_btn.png");
+                                    $(".redPacket").eq(i).find(".redBtn").css("pointer-events","none");
+                                }
+                            } 
+                            for(var j = Len+1; j <= 5; j++) {
+                                $(".redPacket").eq(j).find(".redBtn").attr("src","images/christmas_before_btn.png");
+                                $(".redPacket").eq(j).find(".redBtn").css("pointer-events","none");
+                            }
                             $(".total_price_title font").hide();
                             $(".total_price_title span").countDown({
                                 times: res.data.redStartDate,  //必填'2018/8/13 18:00:00或者 2(两分钟) 
@@ -53,20 +74,7 @@ $(function() {
                     }
                     
 
-                    // 渲染所有按钮 && 禁止点击
-                    var Len = res.data.curStep - 1;
-                    for(var i = 0;i <= Len; i++) {
-                        if(res.data.dataList[i].isDelete == 0) {
-                            $(".redPacket").eq(i).find(".redBtn").attr("src","images/christmas_ready_btn.png");
-                        }else {
-                            $(".redPacket").eq(i).find(".redBtn").attr("src","images/christmas_already_btn.png");
-                            $(".redPacket").eq(i).find(".redBtn").css("pointer-events","none");
-                        }
-                    } 
-                    for(var j = Len+1; j <= 5; j++) {
-                        $(".redPacket").eq(j).find(".redBtn").attr("src","images/christmas_before_btn.png");
-                        $(".redPacket").eq(j).find(".redBtn").css("pointer-events","none");
-                    }
+                   
                 //    if(Date.parse(new Date(res.data.redStartDate))-Date.parse(new Date(res.data.curTime)) <= 68400000) {
                 //        console.log('最后一天啦!');
                 //    }
@@ -112,7 +120,7 @@ $(function() {
             var that = this;
             // that.datas.redTotal = 1000000;
             // 判断临界值
-            if(that.datas.redTotal < 1000000) {
+            if((that.datas.redTotal < 1000000) && (that.datas.redTotal > 200000)) {
                 setInterval(function() {
                     // console.log(that.datas.redTotal);
                     that.datas.redTotal = parseInt(that.datas.redTotal)+1;
@@ -128,7 +136,7 @@ $(function() {
                     }
                 },500);
             }else {
-                $(".numbs").eq(0).attr("class","numbs").addClass('numbs-1');
+                // $(".numbs").eq(0).attr("class","numbs").addClass('numbs-0');
             }
         },
         noTimeToastFn() {
