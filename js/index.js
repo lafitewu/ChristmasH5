@@ -29,6 +29,7 @@ $(function() {
                     if(res.data.isGetRed == 1) {
                         $(".rightNowBtn img").attr("src","images/christmas_gray_share_btn.png");
                         $(".rightNowBtn").css("pointer-events","none");
+                        $(".total_price_title").html("12月25日 19:00-22:00瓜分<br>你已瓜分");
                     }
 
                     $(".inviteStudent").text(res.data.studentNum || 0);
