@@ -273,8 +273,17 @@
         border-radius: 90px 0 0 90px;
     }
     .top_banner {
+        position: relative;
         width: 100%;
     }
+    .bannerGif {
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+        .bannerGif img {
+            width: 100%;
+        }
         .top_banner img {
             width: 100%;
         }
