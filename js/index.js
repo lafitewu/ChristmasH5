@@ -1,6 +1,6 @@
 $(function() {
     function game() {
-        this.hostname = "http://182.92.82.188:8084";
+        this.hostname = "http://182.92.82.188";
         this.uid = "999999999999";
         this.token = "1e3ab683-f455-4b42-bf9b-3fd104b289be";
         this.datas;
