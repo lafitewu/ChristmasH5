@@ -124,7 +124,7 @@
 
     }
     Go.prototype = {
-        init() {
+        init:function() {
             var that = this;
             that.uid = that.getQueryString("uid");
             that.token = that.getQueryString("token");
@@ -139,7 +139,7 @@
 			}
 			return null;
 		},
-        start() {
+        start:function() {
             this.init();
         }
     }
