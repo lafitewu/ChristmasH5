@@ -226,9 +226,9 @@ $(function() {
             var u = navigator.userAgent;
             if (u.indexOf('Android') > -1 || u.indexOf('Linux') > -1) {//安卓手机
                 $(".bannerGif").show();
-                $(".DivideBtn,.rewordBtn,.noTimeBtn,.footerA").attr("href","function://callapp?f=test&title=限时！点击领取今日现金红包&description=我在悦头条圣诞活动中，领取了28元，你也赶紧试试！&image=http://yttyunying.midongtech.xyz/sd12-18.png&link=http://url.cn/5UTcSl0&callback=shareDone");
+                $(".DivideBtn,.rewordBtn,.noTimeBtn,.footerA").attr("href","function://callapp?f=test&title=限时！点击领取今日现金&description=我在悦头条圣诞活动中，领取了28元，你也赶紧试试！&image=http://yttyunying.midongtech.xyz/sd12-18.png&link=http://url.cn/5UTcSl0&callback=shareDone");
             } else if (u.indexOf('iPhone') > -1) {//苹果手机
-                $(".DivideBtn,.rewordBtn,.noTimeBtn,.footerA").attr("href","function://callapp?f=showShareView&title=限时！点击领取今日现金红包&description=我在悦头条圣诞活动中，领取了28元，你也赶紧试试！&image=http://yttyunying.midongtech.xyz/sd12-18.png&link=http://url.cn/5UTcSl0&callback=shareDone");
+                $(".DivideBtn,.rewordBtn,.noTimeBtn,.footerA").attr("href","function://callapp?f=showShareView&title=限时！点击领取今日现金&description=我在悦头条圣诞活动中，领取了28元，你也赶紧试试！&image=http://yttyunying.midongtech.xyz/sd12-18.png&link=http://url.cn/5UTcSl0&callback=shareDone");
             } else if (u.indexOf('Windows Phone') > -1) {//winphone手机
             // alert("winphone手机");
             // window.location.href = "mobile/index.html";
