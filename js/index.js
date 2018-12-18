@@ -15,7 +15,7 @@ $(function() {
 			}
 			return null;
 		},
-        init() {
+        init:function() {
             var that = this;
             that.uid = that.getQueryString("uid");
             that.token = that.getQueryString("token");
@@ -66,7 +66,7 @@ $(function() {
                             }
                             $(".total_price_title font").hide();
                             $(".total_price_title span").countDown({
-                                times: res.data.redStartDate,  //必填'2018/8/13 18:00:00或者 2(两分钟) 
+                                times: "2018/12/18 18:00:00",  //必填'2018/8/13 18:00:00或者 2(两分钟) 
                                 ms: false,   //毫秒是否开启
                                 Hour: true   //小时是否开启
                             });
@@ -86,7 +86,7 @@ $(function() {
                 }
             })
         },
-        ClickFn() {
+        ClickFn:function() {
             var that = this;
             console.log(that.datas);
             $(".redPacket .redBtn").click(function() {
@@ -116,7 +116,7 @@ $(function() {
                 )
             });
         },
-        priceAllFn() {
+        priceAllFn:function() {
             var that = this;
             // that.datas.redTotal = 1000000;
             // 判断临界值
@@ -139,7 +139,7 @@ $(function() {
                 // $(".numbs").eq(0).attr("class","numbs").addClass('numbs-0');
             }
         },
-        noTimeToastFn() {
+        noTimeToastFn:function() {
             var that = this;
             
             $(".rightNowBtn").click(function() {
@@ -182,7 +182,7 @@ $(function() {
             });
         },
         // 瓜分fn
-        divideFn() {
+        divideFn:function() {
             var that = this;
             $.post(
                 that.hostname+"/yfax-htt-api/api/htt/doChrismasActivityRedReward",
@@ -203,7 +203,7 @@ $(function() {
                 }
             )
         },
-        scollFn() {
+        scollFn:function() {
             $(window).scroll(function() {
                 if($(".inviteTitle").offset().top - $(window).scrollTop() < 0) {
                     $(".footerBtn").slideDown();
@@ -212,19 +212,19 @@ $(function() {
                 }
             })
         },
-        iphone() {
+        iphone:function() {
             var u = navigator.userAgent;
             if (u.indexOf('Android') > -1 || u.indexOf('Linux') > -1) {//安卓手机
                 $(".bannerGif").show();
-                $(".DivideBtn,.rewordBtn,.noTimeBtn,.footerA").attr("href","function://callapp?f=test&title=限时！点击领取今日现金红包&description=我在悦头条圣诞活动中，领取了28元，你也赶紧试试！&image=http://yttyunying.midongtech.xyz/sd-1217.png&link=http://url.cn/5UTcSl0&callback=shareDone");
+                $(".DivideBtn,.rewordBtn,.noTimeBtn,.footerA").attr("href","function://callapp?f=test&title=限时！点击领取今日现金红包&description=我在悦头条圣诞活动中，领取了28元，你也赶紧试试！&image=http://yttyunying.midongtech.xyz/sd12-18.png&link=http://url.cn/5UTcSl0&callback=shareDone");
             } else if (u.indexOf('iPhone') > -1) {//苹果手机
-                $(".DivideBtn,.rewordBtn,.noTimeBtn,.footerA").attr("href","function://callapp?f=showShareView&title=限时！点击领取今日现金红包&description=我在悦头条圣诞活动中，领取了28元，你也赶紧试试！&image=http://yttyunying.midongtech.xyz/sd-1217.png&link=http://url.cn/5UTcSl0&callback=shareDone");
+                $(".DivideBtn,.rewordBtn,.noTimeBtn,.footerA").attr("href","function://callapp?f=showShareView&title=限时！点击领取今日现金红包&description=我在悦头条圣诞活动中，领取了28元，你也赶紧试试！&image=http://yttyunying.midongtech.xyz/sd12-18.png&link=http://url.cn/5UTcSl0&callback=shareDone");
             } else if (u.indexOf('Windows Phone') > -1) {//winphone手机
             // alert("winphone手机");
             // window.location.href = "mobile/index.html";
             }
         },
-        start() {
+        start:function() {
             this.init();
             this.scollFn();
             this.iphone();
