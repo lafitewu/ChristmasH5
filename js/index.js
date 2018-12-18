@@ -41,44 +41,45 @@ $(function() {
                         $(".total_price_title span").text(res.data.redDay);
                     }else {
                         if(Date.parse(new Date(res.data.redStartDate))-Date.parse(new Date(res.data.curTime)) <= 0) {
-                            $(".total_price_title").html("12月25日 19:00-22:00瓜分<br>你已瓜分");
-                            $(".numbs").eq(0).attr("class","numbs").addClass('numbs-0');
-                            $(".rightNowBtn img").attr("src","images/christmas_gray_share_btn.png");
-                            $(".rightNowBtn").css("pointer-events","none");
-                            for(var k = 0; k <= 6; k++) {
-                                $(".redPacket").eq(k).find(".redBtn").attr("src","images/christmas_already_btn.png");
-                                $(".redPacket").eq(k).find(".redBtn").css("pointer-events","none");
-                            }
-                        }else {
-                             // 渲染所有按钮 && 禁止点击
-                            var Len = res.data.curStep - 1;
-                            for(var i = 0;i <= Len; i++) {
-                                if(res.data.dataList[i].isDelete == 0) {
-                                    $(".redPacket").eq(i).find(".redBtn").attr("src","images/christmas_ready_btn.png");
-                                }else {
-                                    $(".redPacket").eq(i).find(".redBtn").attr("src","images/christmas_already_btn.png");
-                                    $(".redPacket").eq(i).find(".redBtn").css("pointer-events","none");
+                            if(Date.parse(new Date(res.data.endDate))-Date.parse(new Date(res.data.curTime)) <= 0) {
+                                // 活动已结束
+                                $(".total_price_title").html("12月25日 19:00-22:00瓜分<br>活动已结束");
+                                $(".numbs").eq(0).attr("class","numbs").addClass('numbs-0');
+                                $(".rightNowBtn img").attr("src","images/christmas_overtime_share_btn.png");
+                                $(".rightNowBtn").css("pointer-events","none");
+                                for(var k = 0; k <= 6; k++) {
+                                    $(".redPacket").eq(k).find(".redBtn").attr("src","images/christmas_overtime_btn.png");
+                                    $(".redPacket").eq(k).find(".redBtn").css("pointer-events","none");
                                 }
-                            } 
-                            for(var j = Len+1; j <= 5; j++) {
-                                $(".redPacket").eq(j).find(".redBtn").attr("src","images/christmas_before_btn.png");
-                                $(".redPacket").eq(j).find(".redBtn").css("pointer-events","none");
-                            }
+                            }else {
+                                // 活动进行中
+                                $(".total_price_title").html("12月25日 19:00-22:00瓜分<br>活动进行中");
+                                $(".numbs").eq(0).attr("class","numbs").addClass('numbs-1');
+                                 // 渲染所有按钮 && 禁止点击
+                                var Len = res.data.curStep - 1;
+                                for(var i = 0;i <= Len; i++) {
+                                    if(res.data.dataList[i].isDelete == 0) {
+                                        $(".redPacket").eq(i).find(".redBtn").attr("src","images/christmas_ready_btn.png");
+                                    }else {
+                                        $(".redPacket").eq(i).find(".redBtn").attr("src","images/christmas_already_btn.png");
+                                        $(".redPacket").eq(i).find(".redBtn").css("pointer-events","none");
+                                    }
+                                } 
+                                for(var j = Len+1; j <= 5; j++) {
+                                    $(".redPacket").eq(j).find(".redBtn").attr("src","images/christmas_before_btn.png");
+                                    $(".redPacket").eq(j).find(".redBtn").css("pointer-events","none");
+                                }
+                            }  
+                        }else {
+                            // 活动小于一天并还没到开始时间时
                             $(".total_price_title font").hide();
                             $(".total_price_title span").countDown({
-                                times: "2018/12/18 18:00:00",  //必填'2018/8/13 18:00:00或者 2(两分钟) 
+                                times: res.data.redStartDate,  //必填'2018/8/13 18:00:00或者 2(两分钟) res.data.redStartDate
                                 ms: false,   //毫秒是否开启
                                 Hour: true   //小时是否开启
                             });
                         }
                     }
-                    
-
-                   
-                //    if(Date.parse(new Date(res.data.redStartDate))-Date.parse(new Date(res.data.curTime)) <= 68400000) {
-                //        console.log('最后一天啦!');
-                //    }
-                    
                    that.datas = res.data;
                    that.priceAllFn();
                    that.ClickFn();
@@ -136,7 +137,12 @@ $(function() {
                     }
                 },500);
             }else {
-                // $(".numbs").eq(0).attr("class","numbs").addClass('numbs-0');
+                // if(Date.parse(new Date(that.datas.inviteEndDate))-Date.parse(new Date(that.datas.curTime)) <= 0) {
+                //     $(".numbs").eq(0).attr("class","numbs").addClass('numbs-1');
+                // }else {
+                //     $(".numbs").eq(0).attr("class","numbs").addClass('numbs-0');
+                // }
+                $(".numbs").eq(0).attr("class","numbs").addClass('numbs-1');
             }
         },
         noTimeToastFn:function() {
