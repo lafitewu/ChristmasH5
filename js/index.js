@@ -23,6 +23,7 @@ $(function() {
             
             $.get(that.hostname+"/yfax-htt-api/api/htt/queryChrismasActivityIndex",{"phoneNum": that.uid,"access_token": that.token}, function(res){
                 console.log(res);
+                // res.data.endDate = "2018/12/18 14:00:00";
                 if(res.code == 200) {
                     
                     // 是否可以瓜分
@@ -40,13 +41,6 @@ $(function() {
                     if(res.data.redDay > 0) {
                         $(".total_price_title span").text(res.data.redDay);
                     }else {
-                        // 邀请截止
-                        if(Date.parse(new Date(res.data.inviteEndDate))-Date.parse(new Date(res.data.curTime)) <= 0) {
-                            for(var k = 0; k <= 6; k++) {
-                                $(".redPacket").eq(k).find(".redBtn").attr("src","images/christmas_overtime_btn.png");
-                                $(".redPacket").eq(k).find(".redBtn").css("pointer-events","none");
-                            }
-                        }
                         if(Date.parse(new Date(res.data.redStartDate))-Date.parse(new Date(res.data.curTime)) <= 0) {
                             if(Date.parse(new Date(res.data.endDate))-Date.parse(new Date(res.data.curTime)) <= 0) {
                                 // 活动已结束
@@ -81,6 +75,14 @@ $(function() {
                                 ms: false,   //毫秒是否开启
                                 Hour: true   //小时是否开启
                             });
+                        }
+                        // 邀请截止
+                        if(Date.parse(new Date(res.data.inviteEndDate))-Date.parse(new Date(res.data.curTime)) <= 0) {
+                            console.log('66666');
+                            for(var k = 0; k <= 6; k++) {
+                                $(".redPacket").eq(k).find(".redBtn").attr("src","images/christmas_overtime_btn.png");
+                                $(".redPacket").eq(k).find(".redBtn").css("pointer-events","none");
+                            }
                         }
                     }
                    that.datas = res.data;
