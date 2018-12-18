@@ -40,17 +40,20 @@ $(function() {
                     if(res.data.redDay > 0) {
                         $(".total_price_title span").text(res.data.redDay);
                     }else {
+                        // 邀请截止
+                        if(Date.parse(new Date(res.data.inviteEndDate))-Date.parse(new Date(res.data.curTime)) <= 0) {
+                            for(var k = 0; k <= 6; k++) {
+                                $(".redPacket").eq(k).find(".redBtn").attr("src","images/christmas_overtime_btn.png");
+                                $(".redPacket").eq(k).find(".redBtn").css("pointer-events","none");
+                            }
+                        }
                         if(Date.parse(new Date(res.data.redStartDate))-Date.parse(new Date(res.data.curTime)) <= 0) {
                             if(Date.parse(new Date(res.data.endDate))-Date.parse(new Date(res.data.curTime)) <= 0) {
                                 // 活动已结束
                                 $(".total_price_title").html("12月25日 19:00-22:00瓜分<br>活动已结束");
                                 $(".numbs").eq(0).attr("class","numbs").addClass('numbs-0');
                                 $(".rightNowBtn img").attr("src","images/christmas_overtime_share_btn.png");
-                                $(".rightNowBtn").css("pointer-events","none");
-                                for(var k = 0; k <= 6; k++) {
-                                    $(".redPacket").eq(k).find(".redBtn").attr("src","images/christmas_overtime_btn.png");
-                                    $(".redPacket").eq(k).find(".redBtn").css("pointer-events","none");
-                                }
+                                $(".rightNowBtn").css("pointer-events","none");     
                             }else {
                                 // 活动进行中
                                 $(".total_price_title").html("12月25日 19:00-22:00瓜分<br>活动进行中");
