@@ -24,6 +24,9 @@ $(function() {
             $.get(that.hostname+"/yfax-htt-api/api/htt/queryChrismasActivityIndex",{"phoneNum": that.uid,"access_token": that.token}, function(res){
                 console.log(res);
                 // res.data.endDate = "2018/12/18 14:00:00";
+                // res.data.startDate = "2018/12/18 17:20:00";
+                // res.data.inviteEndDate = "2018/12/18 17:20:00";
+                // res.data.redTotal = "600000";
                 if(res.code == 200) {
                     
                     // 是否可以瓜分
@@ -44,6 +47,7 @@ $(function() {
                         if(Date.parse(new Date(res.data.redStartDate))-Date.parse(new Date(res.data.curTime)) <= 0) {
                             if(Date.parse(new Date(res.data.endDate))-Date.parse(new Date(res.data.curTime)) <= 0) {
                                 // 活动已结束
+                                console.log("活动已结束");
                                 $(".total_price_title").html("12月25日 19:00-22:00瓜分<br>活动已结束");
                                 $(".numbs").eq(0).attr("class","numbs").addClass('numbs-0');
                                 $(".rightNowBtn img").attr("src","images/christmas_overtime_share_btn.png");
@@ -52,20 +56,6 @@ $(function() {
                                 // 活动进行中
                                 $(".total_price_title").html("12月25日 19:00-22:00瓜分<br>活动进行中");
                                 $(".numbs").eq(0).attr("class","numbs").addClass('numbs-1');
-                                 // 渲染所有按钮 && 禁止点击
-                                var Len = res.data.curStep - 1;
-                                for(var i = 0;i <= Len; i++) {
-                                    if(res.data.dataList[i].isDelete == 0) {
-                                        $(".redPacket").eq(i).find(".redBtn").attr("src","images/christmas_ready_btn.png");
-                                    }else {
-                                        $(".redPacket").eq(i).find(".redBtn").attr("src","images/christmas_already_btn.png");
-                                        $(".redPacket").eq(i).find(".redBtn").css("pointer-events","none");
-                                    }
-                                } 
-                                for(var j = Len+1; j <= 5; j++) {
-                                    $(".redPacket").eq(j).find(".redBtn").attr("src","images/christmas_before_btn.png");
-                                    $(".redPacket").eq(j).find(".redBtn").css("pointer-events","none");
-                                }
                             }  
                         }else {
                             // 活动小于一天并还没到开始时间时
@@ -83,6 +73,22 @@ $(function() {
                                 $(".redPacket").eq(k).find(".redBtn").attr("src","images/christmas_overtime_btn.png");
                                 $(".redPacket").eq(k).find(".redBtn").css("pointer-events","none");
                             }
+                        }else {
+                             // 渲染所有按钮 && 禁止点击
+                             var Len = res.data.curStep - 1;
+                             console.log("活动进行中");
+                             for(var i = 0;i <= Len; i++) {
+                                 if(res.data.dataList[i].isDelete == 0) {
+                                     $(".redPacket").eq(i).find(".redBtn").attr("src","images/christmas_ready_btn.png");
+                                 }else {
+                                     $(".redPacket").eq(i).find(".redBtn").attr("src","images/christmas_already_btn.png");
+                                     $(".redPacket").eq(i).find(".redBtn").css("pointer-events","none");
+                                 }
+                             } 
+                             for(var j = Len+1; j <= 5; j++) {
+                                 $(".redPacket").eq(j).find(".redBtn").attr("src","images/christmas_before_btn.png");
+                                 $(".redPacket").eq(j).find(".redBtn").css("pointer-events","none");
+                             }
                         }
                     }
                    that.datas = res.data;
