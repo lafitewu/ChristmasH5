@@ -137,12 +137,11 @@ $(function() {
                     }
                 },500);
             }else {
-                // if(Date.parse(new Date(that.datas.inviteEndDate))-Date.parse(new Date(that.datas.curTime)) <= 0) {
-                //     $(".numbs").eq(0).attr("class","numbs").addClass('numbs-1');
-                // }else {
-                //     $(".numbs").eq(0).attr("class","numbs").addClass('numbs-0');
-                // }
-                $(".numbs").eq(0).attr("class","numbs").addClass('numbs-1');
+                if(Date.parse(new Date(that.datas.endDate))-Date.parse(new Date(that.datas.curTime)) <= 0) {
+                    $(".numbs").eq(0).attr("class","numbs").addClass('numbs-0');
+                }else {
+                    $(".numbs").eq(0).attr("class","numbs").addClass('numbs-1'); 
+                }
             }
         },
         noTimeToastFn:function() {
