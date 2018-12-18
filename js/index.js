@@ -1,6 +1,6 @@
 $(function() {
     function game() {
-        this.hostname = "http://182.92.82.188";
+        this.hostname = "http://callback.ytoutiao.net";  //http://182.92.82.188
         this.uid = "999999999999";
         this.token = "053b9838-6c3c-49d6-a426-1558837f9383";
         this.datas;
