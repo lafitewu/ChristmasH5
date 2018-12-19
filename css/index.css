@@ -327,7 +327,7 @@
                     margin-top: 1.6vw;
                 }
                     .bonus_left span.numbs{
-                        width: calc(100%/9.2);
+                        width: calc(100%/9.4);
                     }
                     .bonus_left span.numbs:after{
                         transition-duration: 300ms; 
