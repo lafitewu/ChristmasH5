@@ -315,7 +315,7 @@
                     float: left;
                 }
                 .bonus_left {
-                    width: 85%;
+                    width: 90%;
                     height: 100%;
                     text-align: center;
                     text-indent: 5vw;
@@ -327,7 +327,8 @@
                     margin-top: 1.6vw;
                 }
                     .bonus_left span.numbs{
-                        width: calc(100%/10);
+                        width: calc(100%/9.5);
+
                     }
                     .bonus_left span.numbs:after{
                         transition-duration: 300ms; 
@@ -352,7 +353,7 @@
                     .bonus_left span.numbs-8:after{background-position: center -244%;}
                     .bonus_left span.numbs-9:after{background-position: center -232.6%;}
                 .bonus_right {
-                    width: 15%;
+                    width: 5%;
                     height: 100%;
                     line-height: 20vw;
                     color: #F8DE25;
